@@ -55,3 +55,10 @@ Or install everything at once:
 - **`.github/workflows/binder.yml`** — Daily build to keep the image cached, so launches are fast.
 
 The full dependency list used for CI notebook testing is in [`scripts/nb-tester/requirements.txt`](scripts/nb-tester/requirements.txt).
+
+---
+
+Tutorial content &copy; IBM Corp, licensed under CC BY-SA 4.0.
+This project is not affiliated with, endorsed by, or sponsored by IBM Corporation.
+IBM, IBM Quantum, and Qiskit are trademarks of IBM Corporation.
+q-docs is part of the [RasQberry](https://rasqberry.org) project and the basis for [doQumentation.org](https://doQumentation.org).
