@@ -1,3 +1,18 @@
-# Install the same dependencies used for notebook testing.
-# This keeps Binder in sync automatically — edit scripts/nb-tester/requirements.txt instead.
--r ../scripts/nb-tester/requirements.txt
+# Core Qiskit packages for Binder (curated subset of scripts/nb-tester/requirements.txt).
+# Covers most tutorials while keeping the image small enough for MyBinder's registry.
+#
+# For notebooks that need additional packages, run in a cell:
+#   !pip install -q <package>
+# Or install everything at once:
+#   !pip install -q qiskit-serverless qiskit-ibm-catalog qiskit-addon-sqd qiskit-addon-utils qiskit-addon-mpf qiskit-addon-aqc-tensor[aer,quimb-jax] qiskit-addon-obp qiskit-addon-cutting pyscf ffsim gem-suite python-sat
+
+qiskit[visualization]~=2.3.0
+qiskit-ibm-runtime~=0.43.1
+qiskit-ibm-transpiler~=0.15.0
+qiskit-aer~=0.17
+qiskit-experiments~=0.13.0
+scipy~=1.16.3
+scikit-learn~=1.8.0
+plotly~=6.5.1
+sympy~=1.14.0
+pylatexenc
