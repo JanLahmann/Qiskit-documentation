@@ -6,6 +6,12 @@ This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation
 - **Tutorials:** [quantum.cloud.ibm.com/docs/en/tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)
 - **Source repo:** [github.com/Qiskit/documentation](https://github.com/Qiskit/documentation)
 
+See also [doQumentation.org](https://doQumentation.org) — an open-source documentation platform built on this repository. Deployment options:
+
+- **RasQberry:** Pre-configured on [RasQberry.org](https://rasqberry.org)
+- **Docker:** Self-hosted with full features
+- **GitHub Pages:** Simplified static deployment at [doQumentation.org](https://doQumentation.org)
+
 Use this fork (q-docs) when you want to **execute notebooks interactively** — no local setup required:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main)
