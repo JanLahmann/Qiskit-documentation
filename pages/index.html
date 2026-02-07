@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qiskit Documentation — Interactive Notebooks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .subtitle { color: #555; margin-bottom: 1.5rem; }
+    .subtitle a { color: #6929c4; }
+    .badge { display: inline-block; margin-bottom: 1.5rem; }
+    .badge img { height: 28px; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.2rem; text-decoration: none; color: inherit; transition: box-shadow 0.15s; }
+    .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card h2 { font-size: 1.1rem; color: #6929c4; margin-bottom: 0.3rem; }
+    .card p { font-size: 0.9rem; color: #555; }
+    h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; }
+    th { font-weight: 600; }
+    code { background: #f0f0f0; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+    pre { background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1rem; font-size: 0.85rem; }
+    pre code { background: none; padding: 0; color: inherit; }
+    .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; font-size: 0.8rem; color: #888; }
+    .footer a { color: #6929c4; }
+    @media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Qiskit Documentation — Interactive Notebooks</h1>
+    <p class="subtitle">Fork of <a href="https://github.com/Qiskit/documentation">Qiskit/documentation</a> with Binder support</p>
+
+    <a class="badge" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main">
+      <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder">
+    </a>
+
+    <div class="cards">
+      <a class="card" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials">
+        <h2>Tutorials</h2>
+        <p>Step-by-step guides covering algorithms, error mitigation, transpilation, and more.</p>
+      </a>
+      <a class="card" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses">
+        <h2>Courses</h2>
+        <p>Structured learning paths from quantum information basics to utility-scale computing.</p>
+      </a>
+    </div>
+
+    <h3>Pre-installed packages</h3>
+    <table>
+      <tr><th>Package</th><th>Version</th></tr>
+      <tr><td>qiskit (with visualization extras)</td><td>~2.3.0</td></tr>
+      <tr><td>qiskit-aer</td><td>~0.17</td></tr>
+      <tr><td>qiskit-ibm-runtime</td><td>~0.43.1</td></tr>
+      <tr><td>pylatexenc</td><td>latest</td></tr>
+    </table>
+    <p>This also includes <strong>matplotlib</strong>, <strong>numpy</strong>, and other standard scientific Python libraries via Qiskit dependencies.</p>
+
+    <h3>Need more packages?</h3>
+    <p>Some notebooks need extras. Install them in a cell:</p>
+    <pre><code>!pip install -q scipy scikit-learn plotly</code></pre>
+    <p>Or install everything at once:</p>
+    <pre><code>!pip install -q scipy scikit-learn qiskit-ibm-transpiler qiskit-experiments \
+  plotly sympy qiskit-serverless qiskit-ibm-catalog qiskit-addon-sqd \
+  qiskit-addon-utils qiskit-addon-mpf qiskit-addon-obp qiskit-addon-cutting \
+  pyscf ffsim gem-suite python-sat</code></pre>
+
+    <div class="footer">
+      <a href="https://github.com/JanLahmann/Qiskit-documentation">GitHub repo</a> ·
+      <a href="https://github.com/JanLahmann/Qiskit-documentation/blob/main/00-START-HERE.md">00-START-HERE.md</a>
+    </div>
+  </div>
+</body>
+</html>
