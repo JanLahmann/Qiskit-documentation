@@ -6,12 +6,6 @@ This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation
 - **Tutorials:** [quantum.cloud.ibm.com/docs/en/tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)
 - **Source repo:** [github.com/Qiskit/documentation](https://github.com/Qiskit/documentation)
 
-See also [doQumentation.org](https://doQumentation.org) — an open-source documentation platform built on this repository. Deployment options:
-
-- **RasQberry:** Pre-configured on [RasQberry.org](https://rasqberry.org)
-- **Docker:** Self-hosted with full features
-- **GitHub Pages:** Simplified static deployment at [doQumentation.org](https://doQumentation.org)
-
 Use this fork (q-docs) when you want to **execute notebooks interactively** — no local setup required:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main)
@@ -20,6 +14,8 @@ Click the badge above, or jump directly into content:
 
 - **Tutorials:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials)
 - **Courses:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses)
+
+See also [doQumentation.org](https://doQumentation.org) — an open-source documentation platform built on this repository, with deployment options for [RasQberry](https://rasqberry.org), Docker (self-hosted, full features), and [GitHub Pages](https://doQumentation.org) (simplified static deployment).
 
 ## Pre-installed packages
 
