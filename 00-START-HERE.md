@@ -1,6 +1,6 @@
 # Run Qiskit notebooks interactively on Binder
 
-This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation) that adds Binder support for running notebooks in your browser. For reading documentation, use the official sources — they are more current and better maintained:
+This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation) that adds Binder support for running notebooks in your browser. For reading the Qiskit documentation, we recommend the official IBM websites — they are more current, better maintained, and have a much better layout and design:
 
 - **Learning:** [quantum.cloud.ibm.com/learning](https://quantum.cloud.ibm.com/learning/)
 - **Tutorials:** [quantum.cloud.ibm.com/docs/en/tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)
