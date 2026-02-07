@@ -15,7 +15,11 @@ Click the badge above, or jump directly into content:
 - **Tutorials:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials)
 - **Courses:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses)
 
-See also [doQumentation.org](https://doQumentation.org) — an open-source documentation platform built on this repository, with deployment options for [RasQberry](https://rasqberry.org), Docker (self-hosted, full features), and [GitHub Pages](https://doQumentation.org) (simplified static deployment).
+Use [doQumentation.org](https://doQumentation.org) when you want to **run notebook code directly in your browser** — browse any tutorial, click **Run** on a code block, and it executes right on the page. Available as:
+
+- **[RasQberry](https://github.com/JanLahmann/RasQberry-Two)** — Self-hosted on Raspberry Pi with local Jupyter kernel (full features)
+- **[Docker](https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation)** — Run the full stack locally with `docker compose up`
+- **[GitHub Pages](https://doQumentation.org)** — Static site using [Binder](https://mybinder.org) for remote code execution
 
 ## Pre-installed packages
 
