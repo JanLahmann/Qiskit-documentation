@@ -1,6 +1,12 @@
-# Run notebooks interactively on Binder
+# Run Qiskit notebooks interactively on Binder
 
-You can run any notebook in this repository directly in your browser — no local setup required:
+This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation) that adds Binder support for running notebooks in your browser. For reading documentation, use the official sources — they are more current and better maintained:
+
+- **Learning:** [quantum.cloud.ibm.com/learning](https://quantum.cloud.ibm.com/learning/)
+- **Tutorials:** [quantum.cloud.ibm.com/docs/en/tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)
+- **Source repo:** [github.com/Qiskit/documentation](https://github.com/Qiskit/documentation)
+
+Use this fork (q-docs) when you want to **execute notebooks interactively** — no local setup required:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main)
 
