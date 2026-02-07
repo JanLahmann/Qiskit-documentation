@@ -1,0 +1,33 @@
+name: Binder
+
+on:
+  schedule:
+    # Build daily at 06:00 UTC to keep the image cached
+    - cron: "0 6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "binder/**"
+      - "scripts/nb-tester/requirements.txt"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Binder build
+        run: |
+          # The /build endpoint is SSE; curl it until we see success or failure.
+          curl -s --max-time 600 \
+            "https://mybinder.org/build/gh/JanLahmann/Qiskit-documentation/main" \
+          | while IFS= read -r line; do
+              echo "$line"
+              if echo "$line" | grep -q '"phase": "ready"'; then
+                echo "Binder image is ready."
+                exit 0
+              fi
+              if echo "$line" | grep -q '"phase": "failed"'; then
+                echo "::error::Binder build failed."
+                exit 1
+              fi
+            done
