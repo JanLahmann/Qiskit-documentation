@@ -18,7 +18,7 @@ jobs:
       - name: Trigger Binder build
         run: |
           # The /build endpoint is SSE; curl it until we see success or failure.
-          curl -s --max-time 600 \
+          curl -s --max-time 1200 \
             "https://mybinder.org/build/gh/JanLahmann/Qiskit-documentation/main" \
           | while IFS= read -r line; do
               echo "$line"
