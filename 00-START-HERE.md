@@ -86,7 +86,7 @@ The Binder environment includes these core packages:
 | qiskit-ibm-runtime | ~0.43.1 |
 | pylatexenc | latest |
 
-This also brings in **matplotlib**, **numpy**, **scipy** (via qiskit dependencies), and other standard scientific Python libraries.
+This also includes **matplotlib**, **numpy**, **scipy**, and other standard scientific Python libraries via Qiskit dependencies.
 
 ## Installing additional packages
 
