@@ -1,4 +1,4 @@
-<!-- Keep in sync with 00-START-HERE.md -->
+<!-- Keep in sync with 00-q-docs--START-HERE.md -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +57,7 @@
 
     <div class="cards">
       <a class="card" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=hello-world.ipynb">
-        <h2>Hello World</h2>
+        <h2>Hello World (q-docs)</h2>
         <p>Your first quantum circuit — build a Bell state and run it on a simulator or real hardware.</p>
       </a>
       <a class="card" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials">
@@ -74,7 +74,7 @@
       <label class="toggle"><input type="checkbox" id="editToggle"> Edit code blocks</label>
     </h3>
 
-    <h3 style="font-size:1rem; margin-top:0.5rem;">Setting up your IBM Quantum account</h3>
+    <h3 id="setting-up-your-ibm-quantum-account" style="font-size:1rem; margin-top:0.5rem;">Setting up your IBM Quantum account</h3>
     <p>Many notebooks connect to IBM Quantum backends. To set this up:</p>
     <ol style="font-size:0.9rem; margin: 0.5rem 0 0.5rem 1.2rem; color:#555;">
       <li><strong>Register</strong> at <a href="https://quantum.cloud.ibm.com/registration" style="color:#6929c4;">quantum.cloud.ibm.com/registration</a> — no credit card required for the first 30 days</li>
@@ -93,7 +93,7 @@ QiskitRuntimeService.save_account(
     <p>Binder sessions are ephemeral, so you need to re-enter your credentials each time.</p>
     <p><strong>Troubleshooting:</strong> If you can't see any instances or backends, check that your region is set to <strong>us-east</strong> and try switching accounts (menu in the upper-right corner). See the IBM guides on <a href="https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup" style="color:#6929c4;">cloud setup</a>, <a href="https://quantum.cloud.ibm.com/docs/en/guides/initialize-account" style="color:#6929c4;">initializing your account</a>, and <a href="https://quantum.cloud.ibm.com/docs/en/guides/save-credentials" style="color:#6929c4;">saving credentials</a> for more details.</p>
 
-    <h3 style="font-size:1rem;">No token? Use local testing mode</h3>
+    <h3 id="no-token-use-local-testing-mode" style="font-size:1rem;">No token? Use local testing mode</h3>
     <p>You can run most notebooks without an IBM Quantum account by replacing the backend with a local simulator. Replace <code>service = QiskitRuntimeService()</code> and <code>backend = service.least_busy(...)</code> with one of:</p>
     <p><strong>FakeBackend</strong> (simulates real device noise):</p>
     <pre><code>from qiskit_ibm_runtime.fake_provider import FakeManilaV2
@@ -131,12 +131,12 @@ backend = AerSimulator()</code></pre>
 
     <div class="footer">
       <a href="https://github.com/JanLahmann/Qiskit-documentation">GitHub repo</a> ·
-      <a href="https://github.com/JanLahmann/Qiskit-documentation/blob/main/00-START-HERE.md">00-START-HERE.md</a>
+      <a href="https://github.com/JanLahmann/Qiskit-documentation/blob/main/00-q-docs--START-HERE.md">00-q-docs--START-HERE.md</a>
       <p style="margin-top: 1rem;">
         <a href="https://github.com/Qiskit/documentation">Qiskit documentation</a> content &copy; IBM Corp, licensed under CC BY-SA 4.0.<br>
-        This project is not affiliated with, endorsed by, or sponsored by IBM Corporation.<br>
         IBM, IBM Quantum, and Qiskit are trademarks of IBM Corporation.<br>
-        q-docs is part of the <a href="https://rasqberry.org">RasQberry</a> project and the basis for <a href="https://doQumentation.org">doQumentation.org</a>.
+        q-docs is part of the <a href="https://rasqberry.org">RasQberry</a> project and the basis for <a href="https://doQumentation.org">doQumentation.org</a>.<br>
+        It is not affiliated with, endorsed by, or sponsored by IBM Corporation.
       </p>
     </div>
   </div>

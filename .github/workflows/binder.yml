@@ -6,9 +6,6 @@ on:
     - cron: "0 6 * * *"
   push:
     branches: [main]
-    paths:
-      - "binder/**"
-      - "scripts/nb-tester/requirements.txt"
   workflow_dispatch:
 
 jobs:
