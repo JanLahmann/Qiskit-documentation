@@ -8,9 +8,13 @@ This script fixes four issues that appear in standard Jupyter:
 2. MDX cspell directives ({/* cspell:ignore ... */}) shown in output
 3. JSX <Image> tags in markdown cells that don't render in Jupyter
 4. Pre-rendered <Image> tags in code cell outputs (replace with HTML <img>)
+
+Image paths are converted from absolute (/docs/images/...) to relative paths
+so they resolve correctly in Jupyter's URL space.
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -32,18 +36,35 @@ IMAGE_RE = re.compile(
 )
 
 
-def fix_image(m: re.Match) -> str:
+def _extract_image_attrs(m: re.Match) -> tuple[str, str]:
+    """Extract (src, alt) from an IMAGE_RE match."""
     src = m.group("src1") or m.group("src2")
     alt = m.group("alt1") or m.group("alt2") or ""
-    return f"![{alt}]({src})"
+    return src, alt
+
+
+def _make_relative(abs_path: str, notebook_dir: str) -> str:
+    """Convert an absolute image path like /docs/images/... to a path
+    relative to the notebook's directory."""
+    # Strip leading / to get repo-relative path
+    repo_rel = abs_path.lstrip("/")
+    return os.path.relpath(repo_rel, notebook_dir)
 
 
 # --- processing ----------------------------------------------------------
 
-def process_notebook(path: Path) -> bool:
+def process_notebook(path: Path, root: Path) -> bool:
     """Process a single notebook. Returns True if the file was modified."""
     data = json.loads(path.read_text(encoding="utf-8"))
     changed = False
+
+    # Directory of this notebook relative to the repo root
+    nb_dir = str(path.parent.relative_to(root))
+
+    def fix_md_image(m: re.Match) -> str:
+        src, alt = _extract_image_attrs(m)
+        rel = _make_relative(src, nb_dir)
+        return f"![{alt}]({rel})"
 
     for i, cell in enumerate(data.get("cells", [])):
         # --- markdown cells: frontmatter, cspell, Image tags ---
@@ -58,8 +79,15 @@ def process_notebook(path: Path) -> bool:
             # Remove cspell directives
             source = CSPELL_RE.sub("", source)
 
-            # Convert <Image> JSX to markdown
-            source = IMAGE_RE.sub(fix_image, source)
+            # Convert <Image> JSX to markdown with relative paths
+            source = IMAGE_RE.sub(fix_md_image, source)
+
+            # Also fix existing markdown images with absolute paths
+            source = re.sub(
+                r"!\[([^\]]*)\]\((/(?:docs|learning)/images/[^)]+)\)",
+                lambda m: f"![{m.group(1)}]({_make_relative(m.group(2), nb_dir)})",
+                source,
+            )
 
             if source != original:
                 cell["source"] = source.splitlines(keepends=True)
@@ -71,9 +99,9 @@ def process_notebook(path: Path) -> bool:
             joined = "".join(text_plain) if isinstance(text_plain, list) else text_plain
             m = IMAGE_RE.search(joined)
             if m:
-                src = m.group("src1") or m.group("src2")
-                alt = m.group("alt1") or m.group("alt2") or ""
-                output["data"]["text/html"] = [f'<img src="{src}" alt="{alt}" />']
+                src, alt = _extract_image_attrs(m)
+                rel = _make_relative(src, nb_dir)
+                output["data"]["text/html"] = [f'<img src="{rel}" alt="{alt}" />']
                 output["data"].pop("text/plain", None)
                 changed = True
 
@@ -94,7 +122,7 @@ def main():
 
     modified = 0
     for nb in notebooks:
-        if process_notebook(nb):
+        if process_notebook(nb, root):
             modified += 1
 
     print(f"fix-notebooks: processed {len(notebooks)} notebooks, modified {modified}")
