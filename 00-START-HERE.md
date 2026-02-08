@@ -1,12 +1,27 @@
-# Run Qiskit notebooks interactively on Binder
+<!-- Keep in sync with pages/index.html -->
 
-This is a fork of [Qiskit/documentation](https://github.com/Qiskit/documentation) that adds Binder support for running notebooks in your browser. For reading the Qiskit documentation, we recommend the official IBM websites — they are more current, better maintained, and have a much better layout and design:
+# Qiskit Documentation — Interactive Notebooks
 
-- **Learning:** [quantum.cloud.ibm.com/learning](https://quantum.cloud.ibm.com/learning/)
-- **Tutorials:** [quantum.cloud.ibm.com/docs/en/tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)
-- **Source repo:** [github.com/Qiskit/documentation](https://github.com/Qiskit/documentation)
+## The official IBM Quantum platform
 
-Use this fork (q-docs) when you want to **execute notebooks interactively** — no local setup required:
+IBM provides a comprehensive platform for learning and using Qiskit — this is the best place to start:
+
+- **[Learning](https://quantum.cloud.ibm.com/learning/)** — 13 structured courses covering quantum basics through utility-scale computing, VQE, quantum machine learning, error correction, and more
+- **[Tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)** — 40+ advanced tutorials on transpilation, circuit cutting, error mitigation, Hamiltonian simulation, QAOA, and more
+- **[Guides](https://quantum.cloud.ibm.com/docs/en/guides)** — Practical how-to guides for common Qiskit tasks
+- **[API Reference](https://quantum.cloud.ibm.com/docs/en/api)** — Versioned documentation for Qiskit and all addons
+- **[Source repo](https://github.com/Qiskit/documentation)** — All content is open source (CC BY-SA 4.0)
+
+The official platform is always up-to-date, well-designed, and the best place to **read** the documentation.
+
+## What this project adds: interactive execution
+
+This fork ([q-docs](https://github.com/JanLahmann/Qiskit-documentation)) adds [Binder](https://mybinder.org) support so you can **run every notebook in your browser** — no local Python installation, no environment setup. Just click and code.
+
+This is useful when you want to:
+- **Learn by doing** — modify code, change parameters, and see results immediately
+- **Run a workshop or class** — share a link, and participants are coding in seconds on any device
+- **Experiment freely** — try variations on tutorials without worrying about breaking your local setup
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main)
 
@@ -15,7 +30,46 @@ Click the badge above, or jump directly into content:
 - **Tutorials:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials)
 - **Courses:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses)
 
-Use [doQumentation.org](https://doQumentation.org) when you want to **run notebook code directly in your browser** — browse any tutorial, click **Run** on a code block, and it executes right on the page. Available as:
+## Running notebooks on Binder
+
+### Setting up your IBM Quantum account
+
+Most notebooks need an IBM Quantum account to access backends. Run this in the first cell of your Binder session:
+
+```python
+from qiskit_ibm_runtime import QiskitRuntimeService
+QiskitRuntimeService.save_account(
+    token="<your-api-key>",
+    instance="<your-crn>",       # optional
+    overwrite=True
+)
+```
+
+Get your API key from [quantum.cloud.ibm.com](https://quantum.cloud.ibm.com/) — the "Open Plan" is free. Binder sessions are ephemeral, so you need to re-enter your credentials each time.
+
+### No token? Use local testing mode
+
+You can run most notebooks without an IBM Quantum account by replacing the backend with a local simulator. Replace `service = QiskitRuntimeService()` and `backend = service.least_busy(...)` with one of:
+
+**FakeBackend (simulates real device noise):**
+```python
+from qiskit_ibm_runtime.fake_provider import FakeManilaV2
+backend = FakeManilaV2()
+```
+
+**AerSimulator (ideal, no noise):**
+```python
+from qiskit_aer import AerSimulator
+backend = AerSimulator()
+```
+
+Both work with `SamplerV2` and `EstimatorV2` from `qiskit_ibm_runtime` — no other code changes needed. See the [local testing mode guide](https://quantum.cloud.ibm.com/docs/en/guides/local-testing-mode) for more details.
+
+---
+
+### doQumentation.org — run code inline
+
+Or use [doQumentation.org](https://doQumentation.org) to **run code inline** — browse any tutorial as a rendered page, click **Run** on a code block, and it executes right there. No Jupyter interface needed. Available as:
 
 - **[RasQberry](https://github.com/JanLahmann/RasQberry-Two)** — Self-hosted on Raspberry Pi with local Jupyter kernel (full features)
 - **[Docker](https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation)** — Run the full stack locally with `docker compose up`

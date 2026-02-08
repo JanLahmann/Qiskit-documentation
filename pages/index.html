@@ -1,3 +1,4 @@
+<!-- Keep in sync with 00-START-HERE.md -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +34,17 @@
 <body>
   <div class="container">
     <h1>Qiskit Documentation — Interactive Notebooks</h1>
-    <p class="subtitle">Fork of <a href="https://github.com/Qiskit/documentation">Qiskit/documentation</a> with Binder support.<br>
-      For reading docs (tutorials, courses, etc), we recommend the official IBM websites (more current, better maintained, much better layout and design):
-      <a href="https://quantum.cloud.ibm.com/learning/">Learning</a> ·
-      <a href="https://quantum.cloud.ibm.com/docs/en/tutorials">Tutorials</a> ·
+    <p class="subtitle"><strong>Start here:</strong> IBM's official platform is the best place to read Qiskit documentation —
+      always current, comprehensive, and well-designed:<br>
+      <a href="https://quantum.cloud.ibm.com/learning/">Learning (13 courses)</a> ·
+      <a href="https://quantum.cloud.ibm.com/docs/en/tutorials">Tutorials (40+)</a> ·
+      <a href="https://quantum.cloud.ibm.com/docs/en/guides">Guides</a> ·
+      <a href="https://quantum.cloud.ibm.com/docs/en/api">API Reference</a> ·
       <a href="https://github.com/Qiskit/documentation">Source repo</a></p>
-    <p class="subtitle">Use this fork (q-docs) when you want to <strong>execute notebooks interactively</strong>:</p>
+    <p class="subtitle">This fork (<a href="https://github.com/JanLahmann/Qiskit-documentation">q-docs</a>)
+      adds <a href="https://mybinder.org">Binder</a> support so you can
+      <strong>run every notebook in your browser</strong> — no installation, no setup.
+      Useful for hands-on learning, workshops, and experimentation:</p>
 
     <a class="badge" href="https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main">
       <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder">
@@ -55,10 +61,33 @@
       </a>
     </div>
 
-    <p class="subtitle">Use <a href="https://doQumentation.org">doQumentation.org</a> when you want to <strong>run notebook code directly in your browser</strong> — browse any tutorial, click <strong>Run</strong> on a code block, and it executes right on the page. Available as:
-      <a href="https://github.com/JanLahmann/RasQberry-Two">RasQberry</a> (self-hosted on Raspberry Pi, full features) ·
-      <a href="https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation">Docker</a> (full stack with <code>docker compose up</code>) ·
-      <a href="https://doQumentation.org">GitHub Pages</a> (static site using <a href="https://mybinder.org">Binder</a> for remote code execution)</p>
+    <h3>Running notebooks on Binder</h3>
+
+    <h3 style="font-size:1rem; margin-top:0.5rem;">Setting up your IBM Quantum account</h3>
+    <p>Most notebooks need an IBM Quantum account to access backends. Run this in the first cell of your Binder session:</p>
+    <pre><code>from qiskit_ibm_runtime import QiskitRuntimeService
+QiskitRuntimeService.save_account(
+    token="&lt;your-api-key&gt;",
+    instance="&lt;your-crn&gt;",       # optional
+    overwrite=True
+)</code></pre>
+    <p>Get your API key from <a href="https://quantum.cloud.ibm.com/" style="color:#6929c4;">quantum.cloud.ibm.com</a> — the "Open Plan" is free. Binder sessions are ephemeral, so you need to re-enter your credentials each time.</p>
+
+    <h3 style="font-size:1rem;">No token? Use local testing mode</h3>
+    <p>You can run most notebooks without an IBM Quantum account by replacing the backend with a local simulator. Replace <code>service = QiskitRuntimeService()</code> and <code>backend = service.least_busy(...)</code> with one of:</p>
+    <p><strong>FakeBackend</strong> (simulates real device noise):</p>
+    <pre><code>from qiskit_ibm_runtime.fake_provider import FakeManilaV2
+backend = FakeManilaV2()</code></pre>
+    <p><strong>AerSimulator</strong> (ideal, no noise):</p>
+    <pre><code>from qiskit_aer import AerSimulator
+backend = AerSimulator()</code></pre>
+    <p>Both work with <code>SamplerV2</code> and <code>EstimatorV2</code> from <code>qiskit_ibm_runtime</code> — no other code changes needed. See the <a href="https://quantum.cloud.ibm.com/docs/en/guides/local-testing-mode" style="color:#6929c4;">local testing mode guide</a> for more details.</p>
+
+    <p class="subtitle">Or use <a href="https://doQumentation.org">doQumentation.org</a> to <strong>run code inline</strong> —
+      browse any tutorial as a rendered page, click <strong>Run</strong> on a code block, and it executes right there. No Jupyter interface needed. Available as:
+      <a href="https://github.com/JanLahmann/RasQberry-Two">RasQberry</a> (self-hosted on Raspberry Pi) ·
+      <a href="https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation">Docker</a> (<code>docker compose up</code>) ·
+      <a href="https://doQumentation.org">GitHub Pages</a> (static site + <a href="https://mybinder.org">Binder</a>)</p>
 
     <h3>Pre-installed packages</h3>
     <table>
