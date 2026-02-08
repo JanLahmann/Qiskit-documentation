@@ -55,7 +55,7 @@ QiskitRuntimeService.save_account(
 
 Binder sessions are ephemeral, so you need to re-enter your credentials each time.
 
-**Troubleshooting:** If you can't see any instances or backends, check that your region is set to **us-east** and try switching accounts (menu in the upper-right corner). See the [IBM Cloud setup guide](https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup) for more details.
+**Troubleshooting:** If you can't see any instances or backends, check that your region is set to **us-east** and try switching accounts (menu in the upper-right corner). See the IBM guides on [cloud setup](https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup), [initializing your account](https://quantum.cloud.ibm.com/docs/en/guides/initialize-account), and [saving credentials](https://quantum.cloud.ibm.com/docs/en/guides/save-credentials) for more details.
 
 ### No token? Use local testing mode
 
@@ -77,13 +77,11 @@ Both work with `SamplerV2` and `EstimatorV2` from `qiskit_ibm_runtime` — no ot
 
 ---
 
-### doQumentation.org — run code inline
+### doQumentation — Open-source website for IBM Quantum's tutorials and learning content
 
-Or use [doQumentation.org](https://doQumentation.org) to **run code inline** — browse any tutorial as a rendered page, click **Run** on a code block, and it executes right there. No Jupyter interface needed. Available as:
+IBM's Qiskit tutorials and documentation are open-source, but the web application serving them is not. [doQumentation](https://doQumentation.org) provides an open-source frontend for IBM's Qiskit documentation content — independently hostable, runnable offline, and deployable on [RasQberry](https://github.com/JanLahmann/RasQberry-Two).
 
-- **[RasQberry](https://github.com/JanLahmann/RasQberry-Two)** — Self-hosted on Raspberry Pi with local Jupyter kernel (full features)
-- **[Docker](https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation)** — Run the full stack locally with `docker compose up`
-- **[GitHub Pages](https://doQumentation.org)** — Static site using [Binder](https://mybinder.org) for remote code execution
+See it live at [doQumentation.org](https://doQumentation.org) — browse tutorials and courses, execute code via [Binder](https://mybinder.org), no install required.
 
 ## Pre-installed packages
 

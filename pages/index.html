@@ -91,7 +91,7 @@ QiskitRuntimeService.save_account(
     overwrite=True
 )</code></pre>
     <p>Binder sessions are ephemeral, so you need to re-enter your credentials each time.</p>
-    <p><strong>Troubleshooting:</strong> If you can't see any instances or backends, check that your region is set to <strong>us-east</strong> and try switching accounts (menu in the upper-right corner). See the <a href="https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup" style="color:#6929c4;">IBM Cloud setup guide</a> for more details.</p>
+    <p><strong>Troubleshooting:</strong> If you can't see any instances or backends, check that your region is set to <strong>us-east</strong> and try switching accounts (menu in the upper-right corner). See the IBM guides on <a href="https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup" style="color:#6929c4;">cloud setup</a>, <a href="https://quantum.cloud.ibm.com/docs/en/guides/initialize-account" style="color:#6929c4;">initializing your account</a>, and <a href="https://quantum.cloud.ibm.com/docs/en/guides/save-credentials" style="color:#6929c4;">saving credentials</a> for more details.</p>
 
     <h3 style="font-size:1rem;">No token? Use local testing mode</h3>
     <p>You can run most notebooks without an IBM Quantum account by replacing the backend with a local simulator. Replace <code>service = QiskitRuntimeService()</code> and <code>backend = service.least_busy(...)</code> with one of:</p>
@@ -103,11 +103,12 @@ backend = FakeManilaV2()</code></pre>
 backend = AerSimulator()</code></pre>
     <p>Both work with <code>SamplerV2</code> and <code>EstimatorV2</code> from <code>qiskit_ibm_runtime</code> — no other code changes needed. See the <a href="https://quantum.cloud.ibm.com/docs/en/guides/local-testing-mode" style="color:#6929c4;">local testing mode guide</a> for more details.</p>
 
-    <p class="subtitle">Or use <a href="https://doQumentation.org">doQumentation.org</a> to <strong>run code inline</strong> —
-      browse any tutorial as a rendered page, click <strong>Run</strong> on a code block, and it executes right there. No Jupyter interface needed. Available as:
-      <a href="https://github.com/JanLahmann/RasQberry-Two">RasQberry</a> (self-hosted on Raspberry Pi) ·
-      <a href="https://github.com/JanLahmann/doQumentation/pkgs/container/doqumentation">Docker</a> (<code>docker compose up</code>) ·
-      <a href="https://doQumentation.org">GitHub Pages</a> (static site + <a href="https://mybinder.org">Binder</a>)</p>
+    <h3 style="font-size:1rem;">doQumentation — Open-source website for IBM Quantum's tutorials and learning content</h3>
+    <p class="subtitle">IBM's Qiskit tutorials and documentation are open-source, but the web application serving them is not.
+      <a href="https://doQumentation.org">doQumentation</a> provides an open-source frontend for IBM's Qiskit documentation content —
+      independently hostable, runnable offline, and deployable on <a href="https://github.com/JanLahmann/RasQberry-Two">RasQberry</a>.
+      See it live at <a href="https://doQumentation.org">doQumentation.org</a> — browse tutorials and courses,
+      execute code via <a href="https://mybinder.org">Binder</a>, no install required.</p>
 
     <h3>Pre-installed packages</h3>
     <table>
