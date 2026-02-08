@@ -121,7 +121,7 @@ The full dependency list used for CI notebook testing is in [`scripts/nb-tester/
 
 ---
 
-Tutorial content &copy; IBM Corp, licensed under CC BY-SA 4.0.
+[Qiskit documentation](https://github.com/Qiskit/documentation) content &copy; IBM Corp, licensed under CC BY-SA 4.0.
 This project is not affiliated with, endorsed by, or sponsored by IBM Corporation.
 IBM, IBM Quantum, and Qiskit are trademarks of IBM Corporation.
 q-docs is part of the [RasQberry](https://rasqberry.org) project and the basis for [doQumentation.org](https://doQumentation.org).
