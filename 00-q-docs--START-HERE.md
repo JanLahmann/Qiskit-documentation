@@ -30,6 +30,7 @@ Click the badge above, or jump directly into content:
 - **Hello World:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=hello-world.ipynb](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=hello-world.ipynb)
 - **Tutorials:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/tutorials)
 - **Courses:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=learning/courses)
+- **Guides:** [mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/guides](https://mybinder.org/v2/gh/JanLahmann/Qiskit-documentation/main?filepath=docs/guides)
 
 ## Running notebooks on Binder
 
