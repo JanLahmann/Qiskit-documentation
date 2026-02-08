@@ -37,7 +37,8 @@
 <body>
   <div class="container">
     <h1>q-docs: Interactive Execution for IBM's Qiskit Documentation</h1>
-    <p class="subtitle"><strong>We recommend IBM's official platform</strong> for reading and learning —
+    <p class="subtitle"><strong>We recommend</strong> IBM's official <a href="https://quantum.cloud.ibm.com/">Quantum Platform</a>
+      and their <a href="https://github.com/Qiskit/documentation">Qiskit documentation</a> for reading and learning —
       always current, comprehensive, and well-designed:<br>
       <a href="https://quantum.cloud.ibm.com/learning/">Learning (13 courses)</a> ·
       <a href="https://quantum.cloud.ibm.com/docs/en/tutorials">Tutorials (40+)</a> ·
@@ -69,14 +70,23 @@
     </h3>
 
     <h3 style="font-size:1rem; margin-top:0.5rem;">Setting up your IBM Quantum account</h3>
-    <p>Most notebooks need an IBM Quantum account to access backends. Run this in the first cell of your Binder session:</p>
+    <p>Many notebooks connect to IBM Quantum backends. To set this up:</p>
+    <ol style="font-size:0.9rem; margin: 0.5rem 0 0.5rem 1.2rem; color:#555;">
+      <li><strong>Register</strong> at <a href="https://quantum.cloud.ibm.com/registration" style="color:#6929c4;">quantum.cloud.ibm.com/registration</a> — no credit card required for the first 30 days</li>
+      <li><strong>Sign in</strong> at <a href="https://quantum.cloud.ibm.com/" style="color:#6929c4;">quantum.cloud.ibm.com</a> and select region <strong>us-east</strong> (required for the free Open Plan)</li>
+      <li><strong>Create an instance</strong> (free Open Plan) at <a href="https://quantum.cloud.ibm.com/instances" style="color:#6929c4;">Instances</a> if you don't have one yet</li>
+      <li><strong>Create an API key</strong> at <a href="https://quantum.cloud.ibm.com/" style="color:#6929c4;">quantum.cloud.ibm.com</a> (or at <a href="https://cloud.ibm.com/iam/apikeys" style="color:#6929c4;">cloud.ibm.com/iam/apikeys</a>)</li>
+      <li><strong>Copy your CRN</strong> (Cloud Resource Name) from your <a href="https://quantum.cloud.ibm.com/instances" style="color:#6929c4;">Instances</a> page</li>
+      <li><strong>Save your credentials once per Binder session</strong> — in any notebook, add a new cell and run:</li>
+    </ol>
     <pre><code>from qiskit_ibm_runtime import QiskitRuntimeService
 QiskitRuntimeService.save_account(
     token="&lt;your-api-key&gt;",
-    instance="&lt;your-crn&gt;",       # optional
+    instance="&lt;your-crn&gt;",
     overwrite=True
 )</code></pre>
-    <p>Get your API key from <a href="https://quantum.cloud.ibm.com/" style="color:#6929c4;">quantum.cloud.ibm.com</a> — the "Open Plan" is free. Binder sessions are ephemeral, so you need to re-enter your credentials each time.</p>
+    <p>Binder sessions are ephemeral, so you need to re-enter your credentials each time.</p>
+    <p><strong>Troubleshooting:</strong> If you can't see any instances or backends, check that your region is set to <strong>us-east</strong> and try switching accounts (menu in the upper-right corner). See the <a href="https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup" style="color:#6929c4;">IBM Cloud setup guide</a> for more details.</p>
 
     <h3 style="font-size:1rem;">No token? Use local testing mode</h3>
     <p>You can run most notebooks without an IBM Quantum account by replacing the backend with a local simulator. Replace <code>service = QiskitRuntimeService()</code> and <code>backend = service.least_busy(...)</code> with one of:</p>

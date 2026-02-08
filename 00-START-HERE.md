@@ -4,7 +4,7 @@
 
 ## We recommend IBM's official platform
 
-For reading and learning, IBM's official Qiskit platform is the best place to start:
+For reading and learning, IBM's official [Quantum Platform](https://quantum.cloud.ibm.com/) and their [Qiskit documentation](https://github.com/Qiskit/documentation) is the best place to start:
 
 - **[Learning](https://quantum.cloud.ibm.com/learning/)** — 13 structured courses covering quantum basics through utility-scale computing, VQE, quantum machine learning, error correction, and more
 - **[Tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)** — 40+ advanced tutorials on transpilation, circuit cutting, error mitigation, Hamiltonian simulation, QAOA, and more
@@ -16,7 +16,7 @@ IBM's platform is always up-to-date, well-designed, and the best place to **read
 
 ## What this project adds: interactive execution
 
-This fork ([q-docs](https://github.com/JanLahmann/Qiskit-documentation)) adds [Binder](https://mybinder.org) support so you can **run every notebook in your browser** — no local Python installation, no environment setup. Just click and code.
+This fork ([q-docs](https://github.com/JanLahmann/Qiskit-documentation)) adds [Binder](https://mybinder.org) support so you can **run every notebook in your browser** — no local Python installation, no environment setup. Just click and run.
 
 This is useful when you want to:
 - **Learn by doing** — modify code, change parameters, and see results immediately
@@ -34,18 +34,27 @@ Click the badge above, or jump directly into content:
 
 ### Setting up your IBM Quantum account
 
-Most notebooks need an IBM Quantum account to access backends. Run this in the first cell of your Binder session:
+Many notebooks connect to IBM Quantum backends. To set this up:
+
+1. **Register** at [quantum.cloud.ibm.com/registration](https://quantum.cloud.ibm.com/registration) — no credit card required for the first 30 days
+2. **Sign in** at [quantum.cloud.ibm.com](https://quantum.cloud.ibm.com/) and select region **us-east** (required for the free Open Plan)
+3. **Create an instance** (free Open Plan) at [Instances](https://quantum.cloud.ibm.com/instances) if you don't have one yet
+4. **Create an API key** at [quantum.cloud.ibm.com](https://quantum.cloud.ibm.com/) (or at [cloud.ibm.com/iam/apikeys](https://cloud.ibm.com/iam/apikeys))
+5. **Copy your CRN** (Cloud Resource Name) from your [Instances](https://quantum.cloud.ibm.com/instances) page
+6. **Save your credentials once per Binder session** — in any notebook, add a new cell and run:
 
 ```python
 from qiskit_ibm_runtime import QiskitRuntimeService
 QiskitRuntimeService.save_account(
     token="<your-api-key>",
-    instance="<your-crn>",       # optional
+    instance="<your-crn>",
     overwrite=True
 )
 ```
 
-Get your API key from [quantum.cloud.ibm.com](https://quantum.cloud.ibm.com/) — the "Open Plan" is free. Binder sessions are ephemeral, so you need to re-enter your credentials each time.
+Binder sessions are ephemeral, so you need to re-enter your credentials each time.
+
+**Troubleshooting:** If you can't see any instances or backends, check that your region is set to **us-east** and try switching accounts (menu in the upper-right corner). See the [IBM Cloud setup guide](https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup) for more details.
 
 ### No token? Use local testing mode
 
