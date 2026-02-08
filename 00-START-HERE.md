@@ -1,10 +1,10 @@
 <!-- Keep in sync with pages/index.html -->
 
-# Qiskit Documentation — Interactive Notebooks
+# q-docs: Interactive Execution for IBM's Qiskit Documentation
 
-## The official IBM Quantum platform
+## We recommend IBM's official platform
 
-IBM provides a comprehensive platform for learning and using Qiskit — this is the best place to start:
+For reading and learning, IBM's official Qiskit platform is the best place to start:
 
 - **[Learning](https://quantum.cloud.ibm.com/learning/)** — 13 structured courses covering quantum basics through utility-scale computing, VQE, quantum machine learning, error correction, and more
 - **[Tutorials](https://quantum.cloud.ibm.com/docs/en/tutorials)** — 40+ advanced tutorials on transpilation, circuit cutting, error mitigation, Hamiltonian simulation, QAOA, and more
@@ -12,7 +12,7 @@ IBM provides a comprehensive platform for learning and using Qiskit — this is 
 - **[API Reference](https://quantum.cloud.ibm.com/docs/en/api)** — Versioned documentation for Qiskit and all addons
 - **[Source repo](https://github.com/Qiskit/documentation)** — All content is open source (CC BY-SA 4.0)
 
-The official platform is always up-to-date, well-designed, and the best place to **read** the documentation.
+IBM's platform is always up-to-date, well-designed, and the best place to **read** the documentation.
 
 ## What this project adds: interactive execution
 

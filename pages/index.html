@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Qiskit Documentation — Interactive Notebooks</title>
+  <title>q-docs: Interactive Execution for IBM's Qiskit Documentation</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
@@ -26,6 +26,9 @@
     code { background: #f0f0f0; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
     pre { background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1rem; font-size: 0.85rem; }
     pre code { background: none; padding: 0; color: inherit; }
+    pre.editable { outline: 1px dashed #6929c4; }
+    .toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #555; float: right; margin-top: 0.2rem; cursor: pointer; }
+    .toggle input { accent-color: #6929c4; cursor: pointer; }
     .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0; font-size: 0.8rem; color: #888; }
     .footer a { color: #6929c4; }
     @media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }
@@ -33,8 +36,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Qiskit Documentation — Interactive Notebooks</h1>
-    <p class="subtitle"><strong>Start here:</strong> IBM's official platform is the best place to read Qiskit documentation —
+    <h1>q-docs: Interactive Execution for IBM's Qiskit Documentation</h1>
+    <p class="subtitle"><strong>We recommend IBM's official platform</strong> for reading and learning —
       always current, comprehensive, and well-designed:<br>
       <a href="https://quantum.cloud.ibm.com/learning/">Learning (13 courses)</a> ·
       <a href="https://quantum.cloud.ibm.com/docs/en/tutorials">Tutorials (40+)</a> ·
@@ -61,7 +64,9 @@
       </a>
     </div>
 
-    <h3>Running notebooks on Binder</h3>
+    <h3>Running notebooks on Binder
+      <label class="toggle"><input type="checkbox" id="editToggle"> Edit code blocks</label>
+    </h3>
 
     <h3 style="font-size:1rem; margin-top:0.5rem;">Setting up your IBM Quantum account</h3>
     <p>Most notebooks need an IBM Quantum account to access backends. Run this in the first cell of your Binder session:</p>
@@ -119,5 +124,13 @@ backend = AerSimulator()</code></pre>
       </p>
     </div>
   </div>
+  <script>
+    document.getElementById('editToggle').addEventListener('change', function () {
+      document.querySelectorAll('pre').forEach(function (el) {
+        el.querySelector('code').contentEditable = this.checked;
+        el.classList.toggle('editable', this.checked);
+      }.bind(this));
+    });
+  </script>
 </body>
 </html>
