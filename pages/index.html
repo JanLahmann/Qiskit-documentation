@@ -120,6 +120,9 @@ backend = AerSimulator()</code></pre>
       <tr><td>qiskit (with visualization extras)</td><td>~2.3.0</td></tr>
       <tr><td>qiskit-aer</td><td>~0.17</td></tr>
       <tr><td>qiskit-ibm-runtime</td><td>~0.43.1</td></tr>
+      <tr><td>qiskit-ibm-catalog</td><td>latest</td></tr>
+      <tr><td>qiskit-ibm-transpiler</td><td>latest</td></tr>
+      <tr><td>qiskit-addon-cutting</td><td>latest</td></tr>
       <tr><td>pylatexenc</td><td>latest</td></tr>
     </table>
     <p>This also includes <strong>matplotlib</strong>, <strong>numpy</strong>, <strong>scipy</strong>, and other standard scientific Python libraries via Qiskit dependencies.</p>
@@ -128,10 +131,10 @@ backend = AerSimulator()</code></pre>
     <p>Some notebooks need extras. Install them in a cell:</p>
     <pre><code>!pip install -q scipy scikit-learn plotly</code></pre>
     <p>Or install everything at once:</p>
-    <pre><code>!pip install -q scipy scikit-learn qiskit-ibm-transpiler qiskit-experiments \
-  plotly sympy qiskit-serverless qiskit-ibm-catalog qiskit-addon-sqd \
+    <pre><code>!pip install -q scipy scikit-learn qiskit-experiments \
+  plotly sympy qiskit-serverless qiskit-addon-sqd \
   qiskit-addon-utils qiskit-addon-mpf qiskit-addon-aqc-tensor[aer,quimb-jax] \
-  qiskit-addon-obp qiskit-addon-cutting pyscf ffsim gem-suite python-sat</code></pre>
+  qiskit-addon-obp pyscf ffsim gem-suite python-sat</code></pre>
 
     <div class="footer">
       <a href="https://github.com/JanLahmann/Qiskit-documentation">GitHub repo</a> ·

@@ -93,6 +93,9 @@ The Binder environment includes these core packages:
 | qiskit (with visualization extras) | ~2.3.0 |
 | qiskit-aer | ~0.17 |
 | qiskit-ibm-runtime | ~0.43.1 |
+| qiskit-ibm-catalog | latest |
+| qiskit-ibm-transpiler | latest |
+| qiskit-addon-cutting | latest |
 | pylatexenc | latest |
 
 This also includes **matplotlib**, **numpy**, **scipy**, and other standard scientific Python libraries via Qiskit dependencies.
@@ -108,7 +111,7 @@ Some notebooks require packages beyond the core set. Install them in a notebook 
 Or install everything at once:
 
 ```python
-!pip install -q scipy scikit-learn qiskit-ibm-transpiler qiskit-experiments plotly sympy qiskit-serverless qiskit-ibm-catalog qiskit-addon-sqd qiskit-addon-utils qiskit-addon-mpf qiskit-addon-aqc-tensor[aer,quimb-jax] qiskit-addon-obp qiskit-addon-cutting pyscf ffsim gem-suite python-sat
+!pip install -q scipy scikit-learn qiskit-experiments plotly sympy qiskit-serverless qiskit-addon-sqd qiskit-addon-utils qiskit-addon-mpf qiskit-addon-aqc-tensor[aer,quimb-jax] qiskit-addon-obp pyscf ffsim gem-suite python-sat
 ```
 
 ## How it works
