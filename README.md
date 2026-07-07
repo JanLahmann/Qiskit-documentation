@@ -379,3 +379,9 @@ You can land the API generation separately from the `requirements.txt` version u
 ## Deploy guides & API docs
 
 See the section "Syncing content with open source repo" in the internal docs repo's README.
+
+## Part of the Fun with Quantum family
+
+[Fun with Quantum](https://fun-with-quantum.org) · [RasQberry Two](https://rasqberry.org) · [RasQberry One](https://rasqberry.one) · [Quantego](https://quantego.org) · [Qutie](https://qutie.org) · [Qoffee-Maker](https://qoffee-maker.org)
+
+*God does play dice. Come play, build, learn.*
